@@ -1,0 +1,14 @@
+{
+  "name": "freeify",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "study": "node study.mjs",
+    "check": "node virality-check.mjs",
+    "test": "node --test"
+  },
+  "description": "Free, local viral-video teardowns (Claude Code plugin)",
+  "engines": {
+    "node": ">=24"
+  }
+}
