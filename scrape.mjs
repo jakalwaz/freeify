@@ -1,7 +1,7 @@
 // Free replacement for the Apify actors the /hook and /analyze skills use.
 //
 // TikTok and YouTube go through yt-dlp (needs its curl_cffi extra for TikTok:
-// setup.sh installs yt-dlp[curl-cffi] into freeify's venv). Instagram profiles go through a logged-out
+// setup.sh installs yt-dlp[curl-cffi] into reelscope's venv). Instagram profiles go through a logged-out
 // headless Chromium page load: an REA capture of instagram.com/<handle>/reels/
 // showed the Reels tab server-renders each reel's play/like/comment counts into
 // its <script type="application/json"> blobs, while the JSON API answers 401

@@ -10,7 +10,7 @@ description: Free, fully local teardown of a short-form video for reverse-engine
 1. Plugin root is `${CLAUDE_PLUGIN_ROOT}`. If that is empty, it is the folder two levels above this SKILL.md.
 2. First use, or the run says `no Python env` / a scrape breaks: run `bash "${CLAUDE_PLUGIN_ROOT}/setup.sh"` (one-time, a few minutes; re-running upgrades yt-dlp). If it reports a missing tool, give the user its exact `brew install` line and stop.
 3. Run, quoting the input:
-   `FREEIFY_HOME="${CLAUDE_PLUGIN_DATA}" node "${CLAUDE_PLUGIN_ROOT}/study.mjs" "<file path or URL>"`
+   `REELSCOPE_HOME="${CLAUDE_PLUGIN_DATA}" node "${CLAUDE_PLUGIN_ROOT}/study.mjs" "<file path or URL>"`
    Add `--fast` to skip the account-baseline scrape (links only). It prints the path of `study.md`.
    - Video attached in chat without a usable path: ask once for the file path or the link.
    - Several videos: run them one by one, then do the batch section below.

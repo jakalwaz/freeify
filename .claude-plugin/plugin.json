@@ -1,5 +1,5 @@
 {
-  "name": "freeify",
+  "name": "reelscope",
   "description": "Free, fully local viral-video teardowns: drop a video file or a TikTok / Instagram / YouTube link and Claude breaks down the hook, structure, pacing, voice delivery and visuals (outfits, setting, on-screen text). No Apify, no paid APIs.",
   "version": "0.1.0",
   "author": { "name": "jakalwaz" },

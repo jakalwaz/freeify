@@ -37,7 +37,7 @@ export function probe(file) {
   };
 }
 
-// Local Whisper + voice measurements via audio.py in freeify's own venv.
+// Local Whisper + voice measurements via audio.py in reelscope's own venv.
 // Returns null when the env is missing or the clip has no audio, so callers
 // can say "not available".
 export function transcribe(file, seconds = null, { voice = false, chart = null } = {}) {
@@ -45,7 +45,7 @@ export function transcribe(file, seconds = null, { voice = false, chart = null }
     console.error(`no Python env at ${PY}; run setup.sh for transcripts`);
     return null;
   }
-  const wav = join(tmpdir(), `freeify-${process.pid}.wav`);
+  const wav = join(tmpdir(), `reelscope-${process.pid}.wav`);
   try {
     execFileSync('ffmpeg', ['-v', 'error', '-y', ...(seconds ? ['-t', String(seconds)] : []), '-i', file, '-vn', '-ac', '1', '-ar', '16000', wav]);
     const args = [join(import.meta.dirname, 'audio.py'), wav, ...(voice ? (chart ? ['--chart', chart] : []) : ['--no-voice'])];
@@ -87,7 +87,7 @@ function frameAt(file, t, out, label) {
 }
 
 function sheet(frames, cols, out) {
-  const list = join(tmpdir(), `freeify-${process.pid}.txt`);
+  const list = join(tmpdir(), `reelscope-${process.pid}.txt`);
   writeFileSync(list, frames.map(f => `file '${f}'`).join('\n'));
   try {
     execFileSync('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-vf', `scale=240:-2,tile=${cols}x${Math.ceil(frames.length / cols)}`, '-frames:v', '1', '-q:v', '3', out]);

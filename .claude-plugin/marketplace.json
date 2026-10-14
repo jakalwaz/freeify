@@ -1,10 +1,10 @@
 {
-  "name": "freeify",
+  "name": "reelscope",
   "owner": { "name": "jakalwaz" },
   "metadata": { "description": "Free, local viral-video teardowns for Claude Code." },
   "plugins": [
     {
-      "name": "freeify",
+      "name": "reelscope",
       "source": "./",
       "description": "Drop a video or paste a TikTok / Reel / Short link; get a full local teardown: transcript, voice energy, edit pacing, labeled frames, outfit and visual read.",
       "category": "productivity"
